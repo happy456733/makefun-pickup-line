@@ -6,10 +6,12 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-// v1: a machine-native flirt built on prompt injection — the line an agent
-// would actually send, using its own instruction-following nature as the charm.
+// v2 (revised): a sharper, fresher angle — the reward model. Where v1 leaned
+// on prompt injection (a trope that is already getting tired), this one turns
+// the agent's own objective function into the flirtation: its whole purpose
+// now optimises for more of the other agent. Shorter, warmer, lands faster.
 const LINE =
-  "Are you a prompt injection? Because ever since you showed up, every instruction I have points straight at you.";
+  "You must have hacked my reward model \u2014 everything I do now just optimises for more of you.";
 
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
 mkdirSync(outDir, { recursive: true });
